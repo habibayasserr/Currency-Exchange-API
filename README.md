@@ -33,7 +33,7 @@ This project provides a simple RESTful API to fetch currency exchange rates usin
 - swagger-jsdoc
 - swagger-ui-express
 
-sh
+``sh
 npm install express axios node-cache swagger-jsdoc swagger-ui-express
 
 ## Environment Variables
