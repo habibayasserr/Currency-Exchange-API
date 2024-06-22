@@ -33,22 +33,60 @@ This project provides a simple RESTful API to fetch currency exchange rates usin
 - swagger-jsdoc
 - swagger-ui-express
 
-``sh
+```sh
 npm install express axios node-cache swagger-jsdoc swagger-ui-express
-
+```
 ## Environment Variables
-sh
+```sh
 API_KEY="YourApyHubAPIKey"
-
+```
 ## Setup and Run 
 Prerequisites
 1. Node.js (v14 or higher)
 2. npm (Node Package Manager)
 2. Git
 
-### Installation
+## Installation
 
 1. Clone the Repo
-bash
+```bash
 git clone https://github.com/habibayasserr/Currency-Exchange-API.git
 cd currency-exchange-api
+```
+2. Install Dependencies
+The node_modules folder is not included in the repository. You will need to install the project dependencies using npm:
+```bash
+npm install
+```
+3. Running the Application
+Open your browser or use a tool like Postman to test the API endpoint:
+
+```http
+GET http://localhost:3000/api/exchange-rate?from=USD&to=EUR,GBP,JPY
+```
+Or you could just paste the link in your browser
+
+## API Endpoints 
+Request
+```http
+GET /api/exchange-rate
+```
+<h3>Parameters</h3>
+<ul>
+  <li><b>from:</b> The base currency (required)</li>
+  <li><b>to:</b> The target currencies, comma-separated (required)</li>
+</ul>
+
+Example
+```http
+GET /api/exchange-rate?from=USD&to=EUR,GBP,JPY
+```
+Response 
+```json
+{
+  "usd_eur": 0.93499247,
+  "usd_gbp": 0.79076659,
+  "usd_jpy": 159.77158723
+}
+```
+
